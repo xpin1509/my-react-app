@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./lib/react.js"></script>
+    <script src="./lib/react-dom.js"></script>
+
+    <div id="root"></div>
+
+    <script>
+        const e = React.createElement;
+        // 显示一个 "Like" <button>
+        class LikeButton extends React.Component {
+            state = {
+                count: 0
+            }
+            render() {
+                return e('div', null, [
+                    e(
+                        'span', {
+                            key: 'span'
+                        }, 
+                        this.state.count
+                    ),
+                    e(
+                        'button',
+                        { 
+                            key: 'buttom',
+                            onClick: () => this.setState({ count: this.state.count + 1 })
+                        },
+                        'Like'
+                    )
+                ])
+                
+            }
+        }
+        
+        const domContainer = document.querySelector('#root');
+        ReactDOM.render(e(LikeButton), domContainer);
+    </script>
+</body>
+</html>
