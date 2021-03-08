@@ -23,7 +23,11 @@
                 return e('div', null, [
                     e(
                         'span', {
-                            key: 'span'
+                            key: 'span',
+                            onClick: () => {
+                                debugger
+                                this.setState({ count: this.state.count + 1 }
+                            )}
                         }, 
                         this.state.count
                     ),
@@ -31,7 +35,10 @@
                         'button',
                         { 
                             key: 'buttom',
-                            onClick: () => this.setState({ count: this.state.count + 1 })
+                            onClick: () => {
+                                debugger
+                                this.setState({ count: this.state.count + 1 }
+                            )}
                         },
                         'Like'
                     )

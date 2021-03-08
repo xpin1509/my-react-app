@@ -13570,6 +13570,8 @@
 
 
   function ChildReconciler(shouldTrackSideEffects) {
+    // diff算法
+    debugger
     function deleteChild(returnFiber, childToDelete) {
       if (!shouldTrackSideEffects) {
         // Noop.
@@ -22276,6 +22278,7 @@
   }
 
   function performUnitOfWork(unitOfWork) {
+    debugger
     // The current, flushed, state of this fiber is the alternate. Ideally
     // nothing should rely on this, but relying on it here means that we don't
     // need an additional field on the work in progress.
@@ -22512,12 +22515,15 @@
   }
 
   function commitRoot(root) {
+    // commit阶段
+    debugger
     var renderPriorityLevel = getCurrentPriorityLevel();
     runWithPriority$1(ImmediatePriority, commitRootImpl.bind(null, root, renderPriorityLevel));
     return null;
   }
 
   function commitRootImpl(root, renderPriorityLevel) {
+    debugger
     do {
       // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
       // means `flushPassiveEffects` will sometimes result in additional
@@ -22591,6 +22597,7 @@
     } else {
       // There is no effect on the root.
       firstEffect = finishedWork.firstEffect;
+      debugger
     }
 
     if (firstEffect !== null) {
