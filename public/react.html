@@ -17,27 +17,29 @@
         // 显示一个 "Like" <button>
         class LikeButton extends React.Component {
             state = {
-                count: 0
+                count: [1,2,3]
             }
             render() {
                 return e('div', null, [
-                    e(
-                        'span', {
-                            key: 'span',
-                            onClick: () => {
-                                debugger
-                                this.setState({ count: this.state.count + 1 }
-                            )}
-                        }, 
-                        this.state.count
-                    ),
+                    this.state.count.map(el => {
+                        return e(
+                            'span', {
+                                key: el,
+                                onClick: () => {
+                                    debugger
+                                    this.setState({ count: this.state.count + 1 }
+                                )}
+                            }, 
+                            el
+                        )
+                    }),
                     e(
                         'button',
                         { 
                             key: 'buttom',
                             onClick: () => {
                                 debugger
-                                this.setState({ count: this.state.count + 1 }
+                                this.setState({ count: [...this.state.count].reverse() }
                             )}
                         },
                         'Like'

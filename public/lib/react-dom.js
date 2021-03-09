@@ -19011,6 +19011,7 @@
   }
 
   function completeWork(current, workInProgress, renderExpirationTime) {
+    debugger
     var newProps = workInProgress.pendingProps;
 
     switch (workInProgress.tag) {
@@ -22308,6 +22309,7 @@
   }
 
   function completeUnitOfWork(unitOfWork) {
+    debugger
     // Attempt to complete the current unit of work, then move to the next
     // sibling. If there are no more siblings, return to the parent fiber.
     workInProgress = unitOfWork;
