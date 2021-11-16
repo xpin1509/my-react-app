@@ -9,13 +9,16 @@ import React, { Component } from 'react';
 // import RouterPage from "./routerPage";
 // import CountDown from './countDownPage/countDown'
 import ReduxDeep from './reduxDeep/index'
+import Child from './Child'
 class App extends Component {
   render() {
+    console.log('parent ...')
     return(
       <div className="appBar">
+        <Child isTure={true}/>
         {/* <RouterPage /> */}
         {/* <CountDown key={this.state.key} value={this.state.value}/> */}
-        <ReduxDeep />
+        {/* <ReduxDeep /> */}
       </div>
     )
   }
