@@ -5,20 +5,20 @@ import React, { Component } from 'react';
 // import ReduxPage from './reduxPage/index'
 // import ReactReduxPage from './reactReduxPage/index'
 // import ReduxThunkPage from './reduxThunkPage/index'
-// import ContextPage from './contextPage'
+import ContextPage from './contextPage'
 // import RouterPage from "./routerPage";
 // import CountDown from './countDownPage/countDown'
-import ReduxDeep from './reduxDeep/index'
-import Child from './Child'
+// import ReduxDeep from './reduxDeep/index'
+// import Child from './Child'
 class App extends Component {
   render() {
-    console.log('parent ...')
     return(
       <div className="appBar">
-        <Child isTure={true}/>
+        {/* <Child isTure={true}/> */}
         {/* <RouterPage /> */}
         {/* <CountDown key={this.state.key} value={this.state.value}/> */}
         {/* <ReduxDeep /> */}
+        <ContextPage />
       </div>
     )
   }

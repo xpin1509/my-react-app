@@ -13,3 +13,4 @@ export default class index extends Component {
         )
     }
 }
+console.dir(typeof ThemeContext.Provider)
